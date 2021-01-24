@@ -6,4 +6,6 @@
     <string name="email">Email</string>
     <string name="log_in">Log in</string>
     <string name="create_account">Create account</string>
+    <string name="name">Name</string>
+    <string name="repeat_password">Repeat password</string>
 </resources>
