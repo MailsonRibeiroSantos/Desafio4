@@ -13,7 +13,7 @@
         android:layout_marginStart="@dimen/dim_10_dp"
         android:layout_marginEnd="@dimen/dim_10_dp"
         android:layout_marginBottom="@dimen/dim_150_dp"
-        android:layout_marginTop="@dimen/dim_150_dp"
+        android:layout_marginTop="@dimen/dim_130_dp"
         app:cardCornerRadius="@dimen/dim_20_dp">
 
         <LinearLayout
@@ -25,7 +25,6 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dim_20_dp"
                 android:textColorHint="@color/text_hint"
                 android:hint="@string/name"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -96,20 +95,14 @@
 
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btnLoginLogin"
+                android:id="@+id/btnCreateAccount"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 app:cornerRadius="@dimen/dim_10_dp"
-                android:text="@string/log_in"/>
-
-
-
+                android:text="@string/create_account"/>
 
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
-
-
 </FrameLayout>

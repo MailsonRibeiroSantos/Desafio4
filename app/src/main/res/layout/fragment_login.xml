@@ -12,7 +12,7 @@
         android:layout_marginStart="@dimen/dim_10_dp"
         android:layout_marginEnd="@dimen/dim_10_dp"
         android:layout_marginBottom="@dimen/dim_150_dp"
-        android:layout_marginTop="@dimen/dim_150_dp"
+        android:layout_marginTop="@dimen/dim_200_dp"
         app:cardCornerRadius="@dimen/dim_20_dp">
 
         <LinearLayout

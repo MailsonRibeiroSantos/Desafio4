@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "808672454588",
+    "project_id": "desafio4-2c6b9",
+    "storage_bucket": "desafio4-2c6b9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:808672454588:android:be51a6027cd96f477fedb9",
+        "android_client_info": {
+          "package_name": "com.mailsonribeiro.desafio4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "808672454588-ti0equ88hs2tc62cppi99li5s6a9mfa1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mailsonribeiro.desafio4",
+            "certificate_hash": "81e2dacdbde570318f1e5b60e976f0d0e7bb180a"
+          }
+        },
+        {
+          "client_id": "808672454588-95carp08j654gsn435kb3aibkph73ect.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCBMwZwWBBNJTyKTwuH69lkxAA207f9zqc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "808672454588-95carp08j654gsn435kb3aibkph73ect.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
