@@ -4,4 +4,10 @@
     <dimen name="dim_28_dp">28dp</dimen>
     <dimen name="dim_150_dp">150dp</dimen>
     <dimen name="dim_130_dp">130dp</dimen>
+    <dimen name="dim_156_dp">156dp</dimen>
+    <dimen name="dim_20_pt">20pt</dimen>
+    <dimen name="dim_24_dp">24dp</dimen>
+    <dimen name="dim_100_dp">100dp</dimen>
+    <dimen name="dim_80_dp">80dp</dimen>
+    <dimen name="dim_50_dp">50dp</dimen>
 </resources>
