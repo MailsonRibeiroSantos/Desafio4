@@ -6,3 +6,6 @@ data class GameModel(
         val createAt: String,
         val description:String
 )
+{
+        constructor():this("","","","")
+}

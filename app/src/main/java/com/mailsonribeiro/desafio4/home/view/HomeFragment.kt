@@ -1,17 +1,27 @@
 package com.mailsonribeiro.desafio4.home.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import com.google.android.material.button.MaterialButton
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
 import com.mailsonribeiro.desafio4.R
+import com.mailsonribeiro.desafio4.newgame.model.GameModel
 
 
 class HomeFragment : Fragment() {
+
+    private lateinit var _listaAdapter: GameAdapter
+    private lateinit var _view: View
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,12 +39,55 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-       var fbtnSaveGame =  view.findViewById<FloatingActionButton>(R.id.fbtnSaveGame)
+        _view = view
+        var fbtnSaveGame =  view.findViewById<FloatingActionButton>(R.id.fbtnSaveGame)
         var navController = Navigation.findNavController(view)
+
+        var auth = FirebaseAuth.getInstance()
+        var id = auth.currentUser!!.uid
+        val games = mutableListOf<GameModel>()
+
+        var database = FirebaseDatabase.getInstance()
+        var ref = database.getReference("usuario")
+
         fbtnSaveGame.setOnClickListener {
             navController.navigate(R.id.newGameFragment)
         }
+
+
+        ref.child(id).addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+
+
+                if (dataSnapshot.hasChildren()) {
+                    dataSnapshot.children.forEach { snapshotChildren ->
+                        val game = snapshotChildren.getValue(GameModel::class.java)
+                        game?.let { games.add(it) }
+                    }
+                }
+
+                addItens(games)
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+
+            }
+        })
+
     }
+    fun addItens(games: MutableList<GameModel>){
+            val lista = _view.findViewById<RecyclerView>(R.id.recycleGames)
+            val manager = GridLayoutManager(_view.context,2)
 
+            _listaAdapter = GameAdapter(games){
 
+            }
+
+            lista.apply {
+                setHasFixedSize(true)
+
+                layoutManager = manager
+                adapter = _listaAdapter
+            }
+        }
 }

@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@color/textTitle"
-        android:textSize="@dimen/dim_20_pt"
+        android:textSize="@dimen/dim_10_pt"
         android:textAllCaps="true"/>
     <TextView
         android:id="@+id/textYearGameHome"

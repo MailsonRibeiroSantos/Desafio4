@@ -9,7 +9,4 @@ class GameRepository {
         game.setValue(gameModel)
     }
 
-    suspend fun saveImage(){
-
-    }
 }

@@ -20,12 +20,13 @@
         android:layout_height="@dimen/dim_100_dp"
         app:cardCornerRadius="@dimen/dim_50_dp"
         android:backgroundTint="@color/secundary"
-        >
+        android:padding="@dimen/dim_10_dp">
         <ImageView
             android:id="@+id/ivGameNewGame"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/ic_baseline_camera_alt_24"/>
+            android:padding="@dimen/dim_10_dp"
+            android:src="@drawable/ic_baseline_camera_alt_10"/>
 
     </com.google.android.material.card.MaterialCardView>
     </FrameLayout>
@@ -68,7 +69,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/name"
+            android:hint="@string/created_at"
             android:textColorHint="@color/text_hint"
             app:errorEnabled="true">
 
@@ -83,7 +84,7 @@
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/name"
+            android:hint="@string/description"
             android:textColorHint="@color/text_hint"
             app:errorEnabled="true">
 

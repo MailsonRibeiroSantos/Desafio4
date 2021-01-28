@@ -6,6 +6,7 @@
     <dimen name="dim_130_dp">130dp</dimen>
     <dimen name="dim_156_dp">156dp</dimen>
     <dimen name="dim_20_pt">20pt</dimen>
+    <dimen name="dim_10_pt">10pt</dimen>
     <dimen name="dim_24_dp">24dp</dimen>
     <dimen name="dim_100_dp">100dp</dimen>
     <dimen name="dim_80_dp">80dp</dimen>
