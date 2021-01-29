@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,6 +23,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var _listaAdapter: GameAdapter
     private lateinit var _view: View
+    private lateinit var _navController: NavController
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,7 +43,7 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         _view = view
         var fbtnSaveGame =  view.findViewById<FloatingActionButton>(R.id.fbtnSaveGame)
-        var navController = Navigation.findNavController(view)
+        _navController = Navigation.findNavController(view)
 
         var auth = FirebaseAuth.getInstance()
         var id = auth.currentUser!!.uid
@@ -51,7 +53,7 @@ class HomeFragment : Fragment() {
         var ref = database.getReference("usuario")
 
         fbtnSaveGame.setOnClickListener {
-            navController.navigate(R.id.newGameFragment)
+            _navController.navigate(R.id.newGameFragment)
         }
 
 
@@ -80,7 +82,7 @@ class HomeFragment : Fragment() {
             val manager = GridLayoutManager(_view.context,2)
 
             _listaAdapter = GameAdapter(games){
-
+                _navController.navigate(R.id.detalheGameFragment)
             }
 
             lista.apply {

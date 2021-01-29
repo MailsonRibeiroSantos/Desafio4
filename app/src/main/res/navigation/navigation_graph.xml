@@ -34,10 +34,22 @@
         <action
             android:id="@+id/action_homeFragment_to_newGameFragment"
             app:destination="@id/newGameFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_detalheGameFragment"
+            app:destination="@id/detalheGameFragment" />
     </fragment>
     <fragment
         android:id="@+id/newGameFragment"
         android:name="com.mailsonribeiro.desafio4.newgame.view.NewGameFragment"
         android:label="fragment_new_game"
-        tools:layout="@layout/fragment_new_game" />
+        tools:layout="@layout/fragment_new_game" >
+        <action
+            android:id="@+id/action_newGameFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detalheGameFragment"
+        android:name="com.mailsonribeiro.desafio4.detalhegame.view.DetalheGameFragment"
+        android:label="fragment_detalhe_game"
+        tools:layout="@layout/fragment_detalhe_game" />
 </navigation>

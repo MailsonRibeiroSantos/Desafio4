@@ -12,5 +12,6 @@
     <color name="text">#009688</color>
     <color name="textTitle">#1F2D3D</color>
     <color name="textSubTitle">#8492A6</color>
+    <color name="background">#DDDDDD</color>
 
 </resources>

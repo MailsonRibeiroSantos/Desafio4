@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.observe
+import androidx.navigation.Navigation
 import com.google.android.material.button.MaterialButton
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.auth.FirebaseAuth
@@ -87,6 +88,8 @@ class NewGameFragment : Fragment() {
         var edtNameNewGame = _view.findViewById<TextInputEditText>(R.id.edtNameNewGame)
         var edtCreateAtNewGame = _view.findViewById<TextInputEditText>(R.id.edtCreateAtNewGame)
         var edtDescriptionNewGame = _view.findViewById<TextInputEditText>(R.id.edtDescriptionNewGame)
+        var navController = Navigation.findNavController(_view)
+
         imageURI?.run {
             val firebase = FirebaseStorage.getInstance()
             val storage = firebase.getReference("uploads")
@@ -103,7 +106,7 @@ class NewGameFragment : Fragment() {
                     var date = edtCreateAtNewGame.text.toString()
                     var description = edtDescriptionNewGame.text.toString()
                     _viewModel.saveGame(name,date,description,_fileReference,ref,id).observe(viewLifecycleOwner, {
-
+                        navController.popBackStack()
                     })
 
 
@@ -111,12 +114,13 @@ class NewGameFragment : Fragment() {
                 .addOnFailureListener {
                     Toast.makeText(
                         _view.context,
-                        "Falha",
+                        "Falha ao carregar imagem!!",
                         Toast.LENGTH_SHORT
                     )
                         .show()
                 }
         }
+
 
 
     }
