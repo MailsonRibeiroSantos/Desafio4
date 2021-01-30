@@ -18,11 +18,13 @@
                 android:id="@+id/imvGameDetail"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dim_210_dp"
+                android:scaleType="centerCrop"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
+
                 android:layout_width="@dimen/dim_20_dp"
                 android:layout_height="@dimen/dim_20_dp"
                 android:layout_marginStart="@dimen/dim_10_dp"
@@ -46,6 +48,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/dim_10_dp"
                 android:layout_marginStart="@dimen/dim_10_dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintBottom_toBottomOf="@+id/imvGameDetail"  />
 
