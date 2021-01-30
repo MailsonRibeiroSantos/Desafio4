@@ -13,4 +13,6 @@
     <dimen name="dim_50_dp">50dp</dimen>
     <dimen name="dim_40_dp">40dp</dimen>
     <dimen name="dim_8_dp">8dp</dimen>
+    <dimen name="dim_210_dp">210dp</dimen>
+    <dimen name="dim_205_dp">205dp</dimen>
 </resources>

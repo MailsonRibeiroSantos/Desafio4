@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
@@ -82,7 +83,12 @@ class HomeFragment : Fragment() {
             val manager = GridLayoutManager(_view.context,2)
 
             _listaAdapter = GameAdapter(games){
-                _navController.navigate(R.id.detalheGameFragment)
+                val bundle = bundleOf(GAME_NAME to it.name,
+                        GAME_DESCRIPTION to it.description,
+                        GAME_IMAGE to it.imageURL,
+                        GAME_YEAR to it.createAt
+                )
+                _navController.navigate(R.id.detalheGameFragment,bundle)
             }
 
             lista.apply {
@@ -92,4 +98,11 @@ class HomeFragment : Fragment() {
                 adapter = _listaAdapter
             }
         }
+
+    companion object {
+        const val GAME_NAME = "GAME_NAME"
+        const val GAME_DESCRIPTION = "COMICS_DESCRIPTION"
+        const val GAME_IMAGE = "GAME_IMAGE"
+        const val GAME_YEAR = "GAME_YEAR"
+    }
 }
